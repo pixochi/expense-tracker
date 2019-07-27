@@ -1,12 +1,12 @@
+<template>
+  <h1>
+    New expense
+  </h1>
+</template>
 
-const NewExpense = {
-  template: '
-    <template>
-      <h1>
-        New expense
-      </h1>
-    </template>
-  ',
-};
+<script>
 
-export default NewExpense;
+  export default {
+    name: 'NewExpense'
+  };
+</script>

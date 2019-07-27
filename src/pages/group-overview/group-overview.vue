@@ -1,10 +1,11 @@
+<template>
+  <h1>Group overview</h1>
+</template>
 
-const GroupOverview = {
-  template: '
-  <template>
-    <h1>Group overview</h1>
-  </template>
-  ',
-};
+<script>
+  export default {
+    name: 'GroupOverview',
+  };
+</script>
 
-export default GroupOverview;
+
