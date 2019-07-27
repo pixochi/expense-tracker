@@ -28,10 +28,19 @@ export default {
   width: 100%;
   height: 52px;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  filter: brightness(0.93);
 }
 
 .button:not(:first-child) {
   margin-left: 20px;
+}
+
+.button:focus, .button:active {
+  outline: none;
 }
 </style>
 

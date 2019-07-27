@@ -27,6 +27,7 @@
     height: 60px;
     background: #00FFB2;
     padding: 20px 24px;
+    cursor: pointer;
   }
 
   .headerTitle {

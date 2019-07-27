@@ -28,6 +28,7 @@ export default {
     justify-content: space-between;
     padding: 16px;
     border-bottom: 1px solid #E0E0E0;
+    cursor: pointer;
   }
 
   .amount {
