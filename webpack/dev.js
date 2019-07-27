@@ -9,22 +9,26 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "../dist"),
     hot: true,
-    disableHostCheck: true, // in case we want to use nginx to serve the app
     public: "localhost:3000",
     historyApiFallback: true, // serve index.html for each route
     publicPath: "/"
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+    }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
         use: "vue-loader"
-      },
-    ],
+      }
+    ]
   },
   plugins: [new VueLoaderPlugin()],
   output: {
     filename: "bundle.js",
-    path: path.join(__dirname, "../dist"),
-  },
+    path: path.join(__dirname, "../dist")
+  }
 };
