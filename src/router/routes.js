@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import GroupOveriew from "../pages/group-overview/group-overview.vue";
-import NewExpense from "../pages/new-expense/new-expense.vue";
+import GroupOveriew from "../pages/group-overview/group-overview";
+import NewExpense from "../pages/new-expense/new-expense";
 
 Vue.use(VueRouter);
 

@@ -1,24 +1,3 @@
-<template>
-  <button :class="$style.button" :onClick="onClick">{{buttonText}}</button>
-</template>
-
-<script>
-export default {
-  name: "Button",
-  props: {
-    buttonText: {
-      type: String,
-      required: true,
-    },
-    onClick: {
-      type: Function,
-      required: false,
-    },
-  }
-}
-</script>
-
-<style module>
 .button {
   background: #E1DA24;
   border-radius: 8px;
@@ -42,6 +21,3 @@ export default {
 .button:focus, .button:active {
   outline: none;
 }
-</style>
-
-

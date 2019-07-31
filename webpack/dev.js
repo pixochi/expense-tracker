@@ -14,9 +14,10 @@ module.exports = {
     publicPath: "/"
   },
   resolve: {
+    extensions: ['.js', '.jsx', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
-    }
+    },
   },
   module: {
     rules: [
@@ -25,9 +26,20 @@ module.exports = {
         use: "vue-loader"
       },
       {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ["transform-vue-jsx"],
+          }
+        }
+      },
+      {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
