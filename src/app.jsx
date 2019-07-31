@@ -1,11 +1,13 @@
-import Header from "./components/header";
+import Header from "./components/header/header";
 
 export default {
   name: "App",
   render() {
-    <div>
-      <Header />
-      <router-view />
-    </div>;
+    return (
+      <div>
+        <Header />
+        <router-view />
+      </div>
+    );
   }
 };

@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: ["./src/app.js"],
+  entry: ["./src/index.js"],
   devServer: {
     contentBase: path.join(__dirname, "../dist"),
     hot: true,
