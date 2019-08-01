@@ -10,12 +10,11 @@
 }
 
 .headerTitle {
-  color: #fff;
   font-size: 28px;
   font-weight: 600;
 }
 
-.hamburger span {
+.hamburger_toggler span {
   display: block;
   width: 32px;
   height: 4px;
@@ -24,3 +23,30 @@
   background: #fff;
   border-radius: 3px;
 }
+
+.optionsMenu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+  height: 400px;
+  max-height: 100vh;
+  width: 280px;
+  max-width: 100vw;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 0 7px;
+  box-shadow: -2px 2px 3px rgba(25, 25, 25, 0.3);
+}
+
+.optionsMenu a {
+  color: #333;
+}
+
+.menuOptionItem {
+  padding: 16px;
+  font-size: 20px;
+  border-bottom: 1px solid #ddd;
+}
+

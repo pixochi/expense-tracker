@@ -1,6 +1,8 @@
 export default {
   name: "NewExpense",
   render() {
-    <h1>New expense</h1>;
+    return (
+      <h1>New expense</h1>
+    );
   }
 };

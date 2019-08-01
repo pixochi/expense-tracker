@@ -1,0 +1,20 @@
+table {
+  border-spacing: 0;
+  border-color: #aaa;
+  margin: 16px auto;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+thead td {
+  font-weight: 600;
+}
+
+td {
+  padding: 16px;
+  text-align: center;
+}
