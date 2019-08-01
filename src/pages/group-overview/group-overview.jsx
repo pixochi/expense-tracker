@@ -38,8 +38,8 @@ export default {
           <UserOverview key={user.id} user={user} />
         ))}
         <div class={styles.buttonGroup}>
-          <Button buttonText="Settle up" />
-          <Button buttonText="+" />
+          <Button buttonText="Settle up" to="/settle-up" isLink />
+          <Button buttonText="+" to="new-expense" isLink />
         </div>
       </div>
     );

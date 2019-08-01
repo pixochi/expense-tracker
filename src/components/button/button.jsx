@@ -10,15 +10,36 @@ export default {
     onClick: {
       type: Function,
       required: false,
-      default: () => {},
+      default: () => {}
+    },
+    isLink: {
+      type: Boolean,
+      required: false
+    },
+    to: {
+      type: String,
+      required: false
     }
   },
   render() {
-    return (
-      <button class={styles.button} onClick={this.onClick}>
-        {this.buttonText}
-      </button>
-    );
+
+    const props = {
+      onClick: this.onClick,
+      class: styles.button,
+    };
+
+    if (this.isLink) {
+      return (
+        <router-link class={styles.button} onClick={this.onClick} to={this.to}>
+          {this.buttonText}
+        </router-link>
+      );
+    } else {
+      return (
+        <button class={styles.button} onClick={this.onClick}>
+          {this.buttonText}
+        </button>
+      );
+    }
   }
 };
-

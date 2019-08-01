@@ -1,4 +1,7 @@
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #E1DA24;
   border-radius: 8px;
   border: 1px solid #E0E0E0;
@@ -6,8 +9,11 @@
   color: #fff;
   width: 100%;
   height: 52px;
-  font-size: 20px;
   cursor: pointer;
+}
+
+.button, .button a {
+  font-size: 20px;
 }
 
 .button:hover {
