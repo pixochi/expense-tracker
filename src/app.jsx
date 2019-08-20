@@ -1,3 +1,5 @@
+import "gsap";
+
 import Header from "./components/header/header";
 
 export default {

@@ -36,17 +36,17 @@ export default {
       {
         id: 1,
         username: "Jack",
-        amount: "-120.00"
+        amount: -120.00
       },
       {
         id: 2,
         username: "Bob",
-        amount: "70.00"
+        amount: 70.00
       },
       {
         id: 3,
         username: "Dushan",
-        amount: "50.00"
+        amount: 50.00
       }
     ]
   }),
@@ -61,6 +61,15 @@ export default {
         this.users = this.users.filter(user => user.id !== userId);
       }
     }
+  },
+  mounted: function () {
+    this.$nextTick(function () {
+      setTimeout(() => {
+        this.users = this.users.map(user => {
+          return {...user};
+        });
+      }, 500);
+    })
   },
   render() {
     return (
