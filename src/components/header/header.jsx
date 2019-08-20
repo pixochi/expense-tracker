@@ -1,5 +1,11 @@
 import styles from "./styles";
 
+const fadeTransitionCSS = `
+  .out {
+    height: 0;
+  }
+`;
+
 export default {
   name: "Header",
   data() {
@@ -24,16 +30,19 @@ export default {
             <span />
             <span />
           </div>
-          {this.isOptionsMenuShown && (
-            <div class={styles.optionsMenu}>
-              <ul>
-                <router-link to="/about">
-                  <li class={styles.menuOptionItem}>About</li>
-                </router-link>
-              </ul>
-            </div>
-          )}
+          <transition enter-class="out" leave-to-class="out">
+            {this.isOptionsMenuShown ? (
+              <div class={styles.optionsMenu}>
+                <ul>
+                  <router-link to="/about">
+                    <li class={styles.menuOptionItem}>About</li>
+                  </router-link>
+                </ul>
+              </div>
+            ) : null}
+          </transition>
         </div>
+        <style>{fadeTransitionCSS}</style>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import styles from './styles';
+import styles from "./styles";
 
 export default {
   name: "UserOverview",
@@ -6,12 +6,21 @@ export default {
     user: {
       type: Object,
       required: true
+    },
+    deleteUser: {
+      type: Function,
+      default: () => null,
     }
   },
   render() {
-    <div class={styles.user_container}>
-      <span class={styles.username}>{this.user.username}</span>
-      <span class={styles.amount}>${this.user.amount}</span>
-    </div>;
+    return (
+      <div class={[styles.user_container]}>
+        <span class={styles.username}>{this.user.username}</span>
+        <div>
+          <span class={styles.amount}>${this.user.amount}</span>
+          <span class={styles.deleteBtn} onClick={this.deleteUser}>X</span>
+        </div>
+      </div>
+    );
   }
 };

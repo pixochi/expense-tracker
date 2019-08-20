@@ -14,3 +14,8 @@
 .username {
   font-size: 20px;
 }
+
+.deleteBtn {
+  color: red;
+  padding: 8px;
+}
