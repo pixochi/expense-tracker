@@ -6,7 +6,6 @@
   height: 60px;
   background: #00ffb2;
   padding: 20px 24px;
-  cursor: pointer;
 }
 
 .headerTitle {
@@ -50,4 +49,3 @@
   font-size: 20px;
   border-bottom: 1px solid #ddd;
 }
-

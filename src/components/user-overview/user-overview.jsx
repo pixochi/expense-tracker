@@ -1,5 +1,7 @@
 import { TweenLite } from "gsap/TweenMax";
 
+import * as DebugMixins from '../../mixins/debug';
+
 import styles from "./styles";
 
 export default {
@@ -27,9 +29,10 @@ export default {
       TweenLite.to(this, 0.5, { tweenedNumber: newValue.amount });
     }
   },
+  mixins: [DebugMixins.didMount, DebugMixins.didUpdate],
   render() {
     return (
-      <div class={[styles.user_container]}>
+      <div class={[styles.user_container]} v-clickable>
         <span class={styles.username}>{this.user.username}</span>
         <div>
           <span class={styles.amount}>${this.animatedAmount}</span>

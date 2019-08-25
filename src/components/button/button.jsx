@@ -36,7 +36,7 @@ export default {
       );
     } else {
       return (
-        <button class={styles.button} onClick={this.onClick}>
+        <button class={styles.button} onClick={this.onClick} v-clickable>
           {this.buttonText}
         </button>
       );

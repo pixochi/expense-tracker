@@ -21,10 +21,10 @@ export default {
   render() {
     return (
       <div class={styles.header}>
-        <span class={styles.headerTitle}>
+        <span class={styles.headerTitle} v-clickable>
           <router-link to="/">ExpenseTracker</router-link>
         </span>
-        <div class={styles.hamburger} onClick={this.toggleOptionsMenu}>
+        <div class={styles.hamburger} onClick={this.toggleOptionsMenu} v-clickable>
           <div class={styles.hamburger_toggler}>
             <span />
             <span />
