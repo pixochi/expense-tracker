@@ -41,11 +41,11 @@ export default {
           ...acc,
           [expense.paidById]: {
             ...acc[expense.paidById],
-            amount: (acc[expense.paidById].amount || 0) + expense.amount
+            amount: (acc[expense.paidById].amount || 0) + Number(expense.amount)
           },
           [expense.boughtForId]: {
             ...acc[expense.boughtForId],
-            amount: (acc[expense.boughtForId].amount || 0) - expense.amount
+            amount: (acc[expense.boughtForId].amount || 0) - Number(expense.amount)
           }
         };
       }, this.users);
@@ -77,12 +77,9 @@ export default {
         }
 
         delete this.users[userId];
-        console.log({ users: this.users });
-        // this.users = { ...this.users };
       }
     },
     addExpense(newExpense) {
-      console.log({ newExpense });
       this.expenses.push(newExpense);
     }
   },

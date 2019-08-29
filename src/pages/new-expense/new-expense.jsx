@@ -37,6 +37,7 @@ export default {
 
     const handleAddExpense = () => {
       this.addExpense(this.form);
+      this.$router.push('/');
     }
 
     return (
