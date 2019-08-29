@@ -9,6 +9,10 @@ import About from "../pages/about/about";
 
 Vue.use(VueRouter);
 
+Vue.filter("monetary", value => {
+  return value.toFixed(2);
+});
+
 const routes = [
   { path: "/", component: GroupOveriew },
   { path: "/about", component: About },

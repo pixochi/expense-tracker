@@ -31,45 +31,15 @@ export default {
     UserOverview,
     Button
   },
-  data: () => ({
-    users: [
-      {
-        id: 1,
-        username: "Jack",
-        amount: -120.00
-      },
-      {
-        id: 2,
-        username: "Bob",
-        amount: 70.00
-      },
-      {
-        id: 3,
-        username: "Dushan",
-        amount: 50.00
-      }
-    ]
-  }),
-  methods: {
-    deleteUser(userId) {
-      const user = this.users.find(user => user.id === userId);
-      const shouldDeleteUser = confirm(
-        `Are you sure you want to delete ${user.username}?`
-      );
-
-      if (shouldDeleteUser) {
-        this.users = this.users.filter(user => user.id !== userId);
-      }
+  props: {
+    users: {
+      type: Array,
+      required: true
+    },
+    deleteUser: {
+      type: Function,
+      default: () => null
     }
-  },
-  mounted: function () {
-    this.$nextTick(function () {
-      setTimeout(() => {
-        this.users = this.users.map(user => {
-          return {...user};
-        });
-      }, 500);
-    })
   },
   render() {
     return (
