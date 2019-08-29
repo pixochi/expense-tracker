@@ -7,7 +7,7 @@ export const didMount = {
 };
 
 export const didUpdate = {
-  mounted: function() {
+  update: function() {
     if (process.env.ENV !== "production") {
       console.log(`Component '${this.$options.name}' did update.`);
     }

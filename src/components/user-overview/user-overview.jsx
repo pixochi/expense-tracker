@@ -7,7 +7,7 @@ import styles from "./styles";
 export default {
   name: "UserOverview",
   data: () => ({
-    tweenedNumber: 0
+    tweenedNumber: 0.0001
   }),
   props: {
     user: {
@@ -21,7 +21,10 @@ export default {
   },
   computed: {
     animatedAmount: function() {
-      return this.tweenedNumber.toFixed(2);
+      if (this.user.amount !== 0 && this.tweenedNumber === 0) {
+        return this.user.amount.toFixed(2);
+      }
+      return Number(this.tweenedNumber) ? Number(this.tweenedNumber).toFixed(2) : 0;
     }
   },
   watch: {

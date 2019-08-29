@@ -7,12 +7,20 @@ export default {
       type: String,
       required: true
     },
-    onClick: {
+    handleClick: {
       type: Function,
       required: false,
       default: () => {}
     },
     isLink: {
+      type: Boolean,
+      required: false
+    },
+    preventDefault: {
+      type: Boolean,
+      required: false
+    },
+    isSubmit: {
       type: Boolean,
       required: false
     },
@@ -22,21 +30,27 @@ export default {
     }
   },
   render() {
-
-    const props = {
-      onClick: this.onClick,
-      class: styles.button,
+    const handleClick = e => {
+      if (this.preventDefault) {
+        e.preventDefault();
+      }
+      this.handleClick();
     };
 
     if (this.isLink) {
       return (
-        <router-link class={styles.button} onClick={this.onClick} to={this.to}>
+        <router-link class={styles.button} onClick={handleClick} to={this.to}>
           {this.buttonText}
         </router-link>
       );
     } else {
       return (
-        <button class={styles.button} onClick={this.onClick} v-clickable>
+        <button
+          class={styles.button}
+          onClick={handleClick}
+          v-clickable
+          type={this.isSubmit ? "submit" : "button"}
+        >
           {this.buttonText}
         </button>
       );
