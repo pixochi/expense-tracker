@@ -19,7 +19,7 @@
   filter: brightness(0.93);
 }
 
-.button:not(:first-child) {
+.button:not(:first-of-type) {
   margin-left: 20px;
 }
 

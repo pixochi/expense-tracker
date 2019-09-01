@@ -36,8 +36,10 @@ export default {
   render() {
 
     const handleAddExpense = () => {
-      this.addExpense(this.form);
-      this.$router.push('/');
+      if (Object.values(this.form).filter(_ => _).length === 4) {
+        this.addExpense(this.form);
+        this.$router.push('/');
+      }
     }
 
     return (
