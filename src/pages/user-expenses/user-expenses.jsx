@@ -1,5 +1,3 @@
-import { TweenLite } from "gsap/TweenMax";
-
 import Headline from "../../components/text/headline/headline";
 import Body from "../../components/text/body/body";
 import Container from "../../components/layout/container/container";

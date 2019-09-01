@@ -37,6 +37,9 @@ export default {
                   <router-link to="/about">
                     <li class={styles.menuOptionItem}>About</li>
                   </router-link>
+                  <router-link to="/new-user">
+                    <li class={styles.menuOptionItem}>Add user</li>
+                  </router-link>
                 </ul>
               </div>
             ) : null}

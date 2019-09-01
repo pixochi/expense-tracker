@@ -88,6 +88,13 @@ export default {
         delete this.users[userId];
       }
     },
+    addUser(newUser) {
+      const newUserId = Math.floor(Math.random() * 1000 + 100).toString();
+      this.users = {
+        ...this.users,
+        [newUserId]: { ...newUser, id: newUserId, amount: 0 }
+      };
+    },
     addExpense(newExpense) {
       this.expenses.push(newExpense);
     }
@@ -115,6 +122,7 @@ export default {
           users={this.usersWithExpenses}
           deleteUser={this.deleteUser}
           addExpense={this.addExpense}
+          addUser={this.addUser}
         />
       </div>
     );
