@@ -1,7 +1,8 @@
 import { TweenLite } from "gsap/TweenMax";
 
-import * as DebugMixins from '../../mixins/debug';
+import * as DebugMixins from "../../mixins/debug";
 
+import textStyles from "../text/styles";
 import styles from "./styles";
 
 export default {
@@ -24,7 +25,9 @@ export default {
       if (this.user.amount !== 0 && this.tweenedNumber === 0.0001) {
         return this.user.amount.toFixed(2);
       }
-      return Number(this.tweenedNumber) ? Number(this.tweenedNumber).toFixed(2) : 0;
+      return Number(this.tweenedNumber)
+        ? Number(this.tweenedNumber).toFixed(2)
+        : 0;
     }
   },
   watch: {
@@ -36,9 +39,20 @@ export default {
   render() {
     return (
       <div class={[styles.user_container]} v-clickable>
-        <span class={styles.username}>{this.user.username}</span>
+        <router-link to={`/user/${this.user.id}`} class={styles.userLink}>
+          <span class={styles.username}>{this.user.username}</span>
+        </router-link>
         <div>
-          <span class={styles.amount}>${this.animatedAmount}</span>
+          <span
+            class={[
+              styles.amount,
+              this.animatedAmount >= 0
+                ? textStyles.pricePositive
+                : textStyles.priceNegative
+            ]}
+          >
+            ${this.animatedAmount}
+          </span>
           <span class={styles.deleteBtn} onClick={this.deleteUser}>
             X
           </span>

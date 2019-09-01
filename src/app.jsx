@@ -7,30 +7,32 @@ export default {
   data: () => ({
     users: {
       1: {
-        id: 1,
+        id: "1",
         username: "Jack"
       },
       2: {
-        id: 2,
+        id: "2",
         username: "Bob"
       },
       3: {
-        id: 3,
+        id: "3",
         username: "Dushan"
       }
     },
     expenses: [
       {
-        id: 1,
-        paidById: 2,
-        boughtForId: 1,
-        amount: 70
+        id: "1",
+        paidById: "2",
+        boughtForId: "1",
+        amount: 70,
+        title: "Beer"
       },
       {
-        id: 2,
-        paidById: 3,
-        boughtForId: 1,
-        amount: 50
+        id: "2",
+        paidById: "3",
+        boughtForId: "1",
+        amount: 50,
+        title: "Pizza"
       }
     ]
   }),
@@ -41,15 +43,22 @@ export default {
           ...acc,
           [expense.paidById]: {
             ...acc[expense.paidById],
-            amount: (acc[expense.paidById].amount || 0) + Number(expense.amount)
+            amount:
+              (acc[expense.paidById].amount || 0) + Number(expense.amount),
+            expenses: [...(acc[expense.paidById].expenses || []), expense]
           },
           [expense.boughtForId]: {
             ...acc[expense.boughtForId],
-            amount: (acc[expense.boughtForId].amount || 0) - Number(expense.amount)
+            amount:
+              (acc[expense.boughtForId].amount || 0) - Number(expense.amount),
+            expenses: [
+              ...(acc[expense.boughtForId].expenses || []),
+              { ...expense, amount: expense.amount * -1 }
+            ]
           }
         };
       }, this.users);
-
+      // console.log(object)
       return Object.values(users);
     }
   },

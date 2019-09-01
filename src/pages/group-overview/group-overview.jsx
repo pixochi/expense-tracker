@@ -48,10 +48,7 @@ export default {
           <p class={styles.group_name}>Melbourne</p>
         </div>
         <div id="user-overview-container">
-          <transition-group
-            name="userOverviewList"
-            tag="div"
-          >
+          <transition-group name="userOverviewList" tag="div">
             {this.users.map(user => (
               <UserOverview
                 key={user.id}
