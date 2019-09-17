@@ -18,7 +18,7 @@ export default {
   computed: {
     settlingUpUsers() {
       return this.users.reduce((acc, user) => {
-        const resolvedUser = user.expenses.reduce(
+        const resolvedUser = (user.expenses || []).reduce(
           (acc, expense) => {
             if (expense.amount > 0) {
               const boughtForUser = this.users.find(
@@ -61,7 +61,6 @@ export default {
     }
   },
   render() {
-    console.log({ settlingUpUsers: this.settlingUpUsers });
     return (
       <Container>
         <Headline>Settle up</Headline>
@@ -82,7 +81,7 @@ export default {
                           : textStyles.priceNegative
                         }
                         >
-                        ${owesTo.amount.toFixed(2)}
+                        ${(owesTo.amount || 0).toFixed(2)}
                       </span>
                     </div>
                   ))}
@@ -101,7 +100,7 @@ export default {
                             : textStyles.priceNegative
                         }
                       >
-                        ${getsFrom.amount.toFixed(2)}
+                        ${Number(getsFrom.amount || 0).toFixed(2)}
                       </span>
                     </div>
                   ))}

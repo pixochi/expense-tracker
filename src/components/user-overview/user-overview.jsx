@@ -23,11 +23,9 @@ export default {
   computed: {
     animatedAmount: function() {
       if (this.user.amount !== 0 && this.tweenedNumber === 0.0001) {
-        return this.user.amount.toFixed(2);
+        return (this.user.amount || 0).toFixed(2);
       }
-      return Number(this.tweenedNumber)
-        ? Number(this.tweenedNumber).toFixed(2)
-        : 0;
+      return (Number(this.tweenedNumber) || 0).toFixed(2);
     }
   },
   watch: {

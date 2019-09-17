@@ -1,5 +1,6 @@
 import Headline from "../../components/text/headline/headline";
 import Body from "../../components/text/body/body";
+import Title from "../../components/text/title/title";
 import Container from "../../components/layout/container/container";
 
 import textStyles from "../../components/text/styles";
@@ -18,15 +19,13 @@ export default {
       user => user.id === this.$route.params.userId
     );
 
-    console.log({ currentUser, users: this.users });
-
     return (
       <Container>
         {currentUser ? (
           <div>
             <Headline>{currentUser.username}</Headline>
             <div>
-              {currentUser.expenses.map(expense => (
+              {(currentUser.expenses || []).map(expense => (
                 <div class={styles.expenseItem}>
                   <Body>{expense.title}</Body>
                   <span

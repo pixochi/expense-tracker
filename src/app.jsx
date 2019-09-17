@@ -58,7 +58,6 @@ export default {
           }
         };
       }, this.users);
-      // console.log(object)
       return Object.values(users);
     }
   },
