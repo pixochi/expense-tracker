@@ -43,8 +43,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              // enable CSS Modules
-              modules: true,
+              modules: true, // Enables CSS Modules
             }
           }
         ]

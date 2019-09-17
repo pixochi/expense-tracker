@@ -1,3 +1,5 @@
+// Mixins for debugging purposes
+
 export const didMount = {
   mounted: function() {
     if (process.env.ENV !== "production") {

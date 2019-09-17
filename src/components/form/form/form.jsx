@@ -2,12 +2,7 @@ import styles from "./styles";
 
 export default {
   name: "Input",
-  props: {
-    // children: {
-    //   type: Object,
-    //   required: true
-    // }
-  },
+  props: {},
   render() {
     return (
       <form class={styles.form}>

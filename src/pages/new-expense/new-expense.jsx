@@ -36,6 +36,7 @@ export default {
   render() {
 
     const handleAddExpense = () => {
+      // Validates the form
       if (Object.values(this.form).filter(_ => _).length === 4) {
         this.addExpense(this.form);
         this.$router.push('/');

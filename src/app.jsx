@@ -4,6 +4,7 @@ import Header from "./components/header/header";
 
 export default {
   name: "App",
+  // Initial app state 
   data: () => ({
     users: {
       1: {
@@ -37,6 +38,7 @@ export default {
     ]
   }),
   computed: {
+    // Assigns expenses to individual users
     usersWithExpenses: function() {
       const users = this.expenses.reduce((acc, expense) => {
         return {
@@ -99,6 +101,7 @@ export default {
     }
   },
   mounted: function() {
+    // Allows to animate users' balance on the main page
     this.$nextTick(function() {
       setTimeout(() => {
         this.users = Object.keys(this.users).reduce((acc, userId) => {

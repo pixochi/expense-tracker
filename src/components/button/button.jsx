@@ -31,9 +31,6 @@ export default {
   },
   render() {
     const handleClick = e => {
-      if (this.preventDefault) {
-        // e.preventDefault();
-      }
       this.handleClick();
     };
 

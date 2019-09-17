@@ -19,6 +19,7 @@ export default {
   },
   render() {
     const handleAddUser = () => {
+      // Validates the form
       if (Object.values(this.form).filter(_ => _).length === 1) {
         this.addUser(this.form);
         this.$router.push('/');

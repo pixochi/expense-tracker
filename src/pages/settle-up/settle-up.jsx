@@ -16,6 +16,7 @@ export default {
     }
   },
   computed: {
+    // Gets the amount each user should receive and give
     settlingUpUsers() {
       return this.users.reduce((acc, user) => {
         const resolvedUser = (user.expenses || []).reduce(
